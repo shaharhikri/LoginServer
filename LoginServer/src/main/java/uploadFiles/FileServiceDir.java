@@ -13,7 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import errors.FileDidntUploadException;
 
 @Service
-public class FileServiceJpa implements FileService {
+public class FileServiceDir implements FileService {
 
 	@Override
 	public String uploadFile(MultipartFile files[], String upload_user_directory) throws IOException, FileDidntUploadException {

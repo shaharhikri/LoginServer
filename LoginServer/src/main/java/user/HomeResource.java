@@ -1,4 +1,4 @@
-package login;
+package user;
 
 
 import org.springframework.security.core.annotation.CurrentSecurityContext;
