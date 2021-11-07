@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'Font Awesome 5 Pro';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('/Frontend/fontawesome/webfonts/fa-light-300.eot');
+    src: url('/Frontend/fontawesome/webfonts/fa-light-300.eot?#iefix') format('embedded-opentype'), url('/Frontend/fontawesome/webfonts/fa-light-300.woff2') format('woff2'), url('/Frontend/fontawesome/webfonts/fa-light-300.woff') format('woff'), url('/Frontend/fontawesome/webfonts/fa-light-300.ttf') format('truetype'), url('/Frontend/fontawesome/webfonts/fa-light-300.svg#fontawesome') format('svg');
+}
+
+.fal, .fas {
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Font Awesome 5 Pro Brands';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/Frontend/fontawesome/webfonts/fa-brands-400.eot');
+    src: url('/Frontend/fontawesome/webfonts/fa-brands-400.eot?#iefix') format('embedded-opentype'), url('/Frontend/fontawesome/webfonts/fa-brands-400.woff2') format('woff2'), url('/Frontend/fontawesome/webfonts/fa-brands-400.woff') format('woff'), url('/Frontend/fontawesome/webfonts/fa-brands-400.ttf') format('truetype'), url('/Frontend/fontawesome/webfonts/fa-brands-400.svg#fontawesome') format('svg');
+}
+
+.fab {
+    font-family: 'Font Awesome 5 Pro Brands';
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'dotsfont';
+    font-display: auto;
+    src: url('/Frontend/fonts/dotsfont.eot');
+    src: url('/Frontend/fonts/dotsfont.eot?#iefix') format('embedded-opentype'), url('/Frontend/fonts/dotsfont.woff') format('woff'), url('/Frontend/fonts/dotsfont.ttf') format('truetype'), url('/Frontend/fonts/dotsfont.svg#dotsfontregular') format('svg');
+}
+
+.conceal {
+    font-family: 'dotsfont';
+}

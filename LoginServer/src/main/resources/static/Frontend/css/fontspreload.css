@@ -1,0 +1,87 @@
+@font-face {
+    font-family: 'Lato';
+    font-display: fallback;
+    font-style: normal;
+    font-weight: 400;
+    src: local("Lato Regular"), local("Lato-Regular"), url(https://fonts.gstatic.com/s/lato/v16/S6uyw4BMUTPHjxAwXjeu.woff2) format("woff2");
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+    font-family: 'Lato';
+    font-display: fallback;
+    font-style: normal;
+    font-weight: 400;
+    src: local("Lato Regular"), local("Lato-Regular"), url(https://fonts.gstatic.com/s/lato/v16/S6uyw4BMUTPHjx4wXg.woff2) format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/*Only extremly necccessary styles for font-face-src -> prevent CLS*/
+body, .body {
+    margin: 0;
+    font-family: 'Lato', arial, helvetica, sans-serif !important;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+
+    body h1, body h2, body h3, body h4, body h5, body h6,
+    body .h1, body .h2, body .h3, body .h4, body .h5, body .h6, .body h1, .body h2, .body h3, .body h4, .body h5, .body h6,
+    .body .h1, .body .h2, .body .h3, .body .h4, .body .h5, .body .h6 {
+        margin-bottom: 0.5rem;
+        font-family: 'Lato', arial, helvetica, sans-serif;
+        font-weight: 500;
+        line-height: 1.2;
+        color: #677689;
+    }
+
+    body h1, body .h1, .body h1, .body .h1 {
+        font-size: 2.5rem;
+    }
+
+@media (max-width: 1200px) {
+    body h1, body .h1, .body h1, .body .h1 {
+        font-size: calc(1.375rem + 1.5vw);
+    }
+}
+
+body h2, body .h2, .body h2, .body .h2 {
+    font-size: 2rem;
+}
+
+@media (max-width: 1200px) {
+    body h2, body .h2, .body h2, .body .h2 {
+        font-size: calc(1.325rem + 0.9vw);
+    }
+}
+
+body h3, body .h3, .body h3, .body .h3 {
+    font-size: 1.75rem;
+}
+
+@media (max-width: 1200px) {
+    body h3, body .h3, .body h3, .body .h3 {
+        font-size: calc(1.3rem + 0.6vw);
+    }
+}
+
+body h4, body .h4, .body h4, .body .h4 {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 1200px) {
+    body h4, body .h4, .body h4, .body .h4 {
+        font-size: calc(1.275rem + 0.3vw);
+    }
+}
+
+body h5, body .h5, .body h5, .body .h5 {
+    font-size: 1.25rem;
+}
+
+body h6, body .h6, .body h6, .body .h6 {
+    font-size: 1rem;
+}
