@@ -4,7 +4,6 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
@@ -31,8 +30,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 				.antMatchers("/user").hasAnyRole("USER","ADMIN")
 				.antMatchers("/uploader").hasAnyRole("USER","ADMIN")
 				.antMatchers("/uploadFile").hasAnyRole("USER","ADMIN")
-				.antMatchers("/").permitAll()
-				.and().formLogin();
+				.antMatchers("/").hasAnyRole("USER","ADMIN")
+				.and().formLogin()
+				.loginPage("/login")
+				.permitAll()
+				;
 	}
 
 	@Bean

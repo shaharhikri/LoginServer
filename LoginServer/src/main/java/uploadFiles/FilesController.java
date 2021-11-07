@@ -4,8 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.CurrentSecurityContext;
 import org.springframework.stereotype.Controller;
 import java.io.IOException;
-
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
@@ -20,10 +18,6 @@ public class FilesController {
 	@Autowired
 	private FileService fileService;
 	
-	@GetMapping("/uploader")
-	public String uploader() {
-		return "uploader";
-	}
 	
 	@PostMapping("/uploadFile")
 	public String uploadFile(@CurrentSecurityContext(expression = "authentication?.name") String username,@RequestParam("file") MultipartFile file[], RedirectAttributes redirectAttributes) throws IOException {
@@ -34,7 +28,7 @@ public class FilesController {
 			redirectAttributes.addFlashAttribute("errorMessage", "Please select a file to upload.");
 		}
 		
-		return "redirect:/uploader";
+		return "redirect:/";
 	}
 	
 	@PostMapping("/showFiles")
