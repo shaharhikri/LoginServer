@@ -1,0 +1,14 @@
+<!DOCTYPE html>  
+<html xmlns:th="http://www.thymeleaf.org"> 
+<head>
+<meta charset="UTF-8">
+<title>User page</title>
+</head>
+<body>
+<h1>Welcome User</h1>
+<form action="showFiles" method="POST">
+    <button name="foo" value="upvote">Upvote</button>
+</form>
+<p class="text-success" th:if="${filesMessage}" th:text="${filesMessage}"></p>
+</body>
+</html>
