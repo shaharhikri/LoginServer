@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @ComponentScan(basePackages = { "boot","login","errors","uploadFiles" } )
+//TODO: add EntityScan.
 @SpringBootApplication
 public class Application {
 
