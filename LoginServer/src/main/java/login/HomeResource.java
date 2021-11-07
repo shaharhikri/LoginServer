@@ -17,7 +17,7 @@ import uploadFiles.FileService;
 @Controller // changed from RestController
 public class HomeResource {
 
-	// what happen when you connect
+	// what happen when you connect.
 	@RequestMapping("/")
 	public String index() {
 		return "redirect:/uploader";
