@@ -1,0 +1,357 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head id="head">
+    <script>
+        (function (w) {
+            w.wasStartupInvoked = true;
+            w.dataLayer = [];
+            var f = w.Filemail = w.Filemail || {};
+            f.appver = '1.8861.141-3814267-master';
+            f.scriptsVer = '1.8861.141.1';
+            f.logenabled = false;
+            f.pages = f.pages || {};
+            f.ng = f.ng || {};
+            f.datez = { firstDayOfWeek: 0 };
+            f.defaultCulture = 'en-us';
+            f.culture = 'en-us';
+            f.currentUrlLanguagePart = '';
+            f.b64decode = function (str) { return decodeURIComponent(atob(str).split('').map(function (c) { return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2); }).join('')); };
+            var config = JSON.parse(Filemail.b64decode('eyJmYmlkIjoiMTM4MzAwMDMyMDk2IiwiY2RuIjoiIiwiY291bnRyeSI6IklMIiwibWVtYmVyc2hpcCI6IkZyZWUiLCJzZXR0aW5ncyI6eyJHbWFpbENvbnRhY3RzSW1wb3J0RW5hYmxlZCI6IjEiLCJNYXhGcmVlVHJhbnNmZXJzUGVyMjRIb3VycyI6IjIifSwidXBsb2FkZXJVc2VyIjp7Im1heGRvd25sb2FkcyI6MjAsIm1heGRheXMiOjcsIm1heHRyYW5zZmVyc2l6ZSI6NTAwMDAwMDAwMCwibWVtYmVyc2hpcG5hbWUiOiJGcmVlIiwiaXN0cmlhbCI6ZmFsc2UsImRlZmF1bHRub3RpZnkiOnRydWUsImRlZmF1bHRkYXlzIjo3LCJkZWZhdWx0Y29uZmlybWF0aW9uIjp0cnVlLCJkZWZhdWx0ZG93bmxvYWRzIjoyMCwiaWQiOm51bGwsIm5hbWUiOm51bGwsImludGVyY29taGFzaCI6bnVsbCwiZW1haWwiOm51bGwsIm1vYmlsZXBob25lIjpudWxsLCJzaWduYXR1cmUiOm51bGwsImRlZmF1bHRzdWJqZWN0IjpudWxsLCJjb3VudHJ5IjpudWxsLCJuZXdzbGV0dGVyIjpudWxsLCJjcmVhdGVkIjowLCJzc29QbGF0Zm9ybSI6bnVsbCwiY2Fuc2VuZCI6dHJ1ZSwiZXhwaXJlZCI6ZmFsc2UsImVtYWlsdmVyaWZpZWRmb3JzZW5kaW5nIjpmYWxzZSwiZnJlZWxpbWl0cmVhY2hlZCI6ZmFsc2UsImNvbXBhbnluYW1lIjpudWxsLCJjb21wYW55aWQiOm51bGwsImFkbWluIjpudWxsLCJyb2xlIjowLCJmb3JjZXBhc3N3b3Jkb25pbmNvbWluZyI6bnVsbCwiY2FucmVjZWl2ZWZpbGVzIjpudWxsLCJpc2F2YWlsYWJsZXJlY2lwaWVudGluY29taW5nIjpmYWxzZSwiaXNkZWZhdWx0cmVjaXBpZW50aW5jb21pbmciOmZhbHNlLCJidXR0b25zY29sb3IiOiIjMTM3N0MzIiwiYnV0dG9uc3RleHRjb2xvciI6IiNmZmZmZmYiLCJjb21wYW55bG9nbyI6bnVsbCwic2hvd2FsbHJlY2lwaWVudHMiOmZhbHNlLCJjYW5zdG9yZWZpbGVzZm9yZXZlciI6ZmFsc2UsImVuZm9yY2VwYXNzd29yZHBvbGljeSI6ZmFsc2UsInVkcGVuYWJsZWQiOmZhbHNlLCJhbGxvd3VubGltaXRlZGRheXMiOmZhbHNlLCJjYW5BY2Nlc3NPdGhlcnNGaWxlcyI6bnVsbCwic3Vic2NyaXB0aW9uIjpudWxsLCJzdG9yYWdlaW51c2UiOm51bGwsInN0b3JhZ2VsaW1pdCI6bnVsbCwicGFzc3dvcmRNaW5MZW5ndGgiOm51bGwsImNvbnRhY3Rncm91cHMiOm51bGx9fQ=='));
+
+            var track = { 'gtm.start': new Date().getTime(), event: 'gtm.js' };
+            if (!!config.membership) { track.ut = config.membership; }
+            w.dataLayer.push(track);
+
+            w.FacebookAppId = config.fbid;
+            f.uploader = f.uploader || {};
+            f.uploader.user = config.uploaderUser;
+            f.Country = config.country;
+            f.Settings = config.settings;
+            f.CDN = config.cdn;
+
+            f.OSdetect = (function () {
+                var macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
+                    windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
+                    iosPlatforms = ['iPhone', 'iPad', 'iPod'];
+                var ua = (w.navigator.userAgent || '').toLowerCase(), pl = w.navigator.platform, os = null;
+                if (ua.indexOf('iphone') > -1 || ua.indexOf('ipad') > -1 || ua.indexOf('macintosh') > -1 && 'ontouchend' in document) {
+                    os = 'iOS';
+                } else if (macosPlatforms.indexOf(pl) !== -1) {
+                    os = 'Mac OS';
+                } else if (windowsPlatforms.indexOf(pl) !== -1) {
+                    os = 'Windows';
+                } else if (/android/.test(ua)) {
+                    os = 'Android';
+                }
+                if (!os && /Linux/.test(pl)) {
+                    os = 'Linux';
+                }
+                return os;
+            })();
+
+        })(window);
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-PF75NR"></script>
+    <meta charset="utf-8" />
+    <meta lang="en" />
+    <meta http-equiv="content-type" content="text/html" />
+    <meta name="copyright" content="ML" />
+    <meta name="author" content="ML" />
+    <meta name="Distribution" content="Global" />
+    <meta name="Rating" content="General" />
+    <meta name="Revisit-after" content="1 Day" />
+    <meta name="verify-v1" content="MTKk0EcIWNVD3zEsTmhv++t10WKbcZk+aCWikyqyRGw=" />
+    <meta name="theme-color" content="#1377C3" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@ML" />
+    <meta property="og:site_name" content="ML" />
+    <meta property="og:type" content="website" />
+    <title>
+        Malhin Learning
+    </title>
+    <meta name="description" content="Malhin Learning.">
+    <meta itemprop="description" content="Malhin Learning.">
+    <meta property="og:description" content="Malhin Learning">
+    <meta name="twitter:description" content="Malhin Learning">
+    <meta property="og:image" content="images/logo/logo-256.png">
+    <meta itemprop="image" content="images/logo/logo-256.png">
+    <meta property="og:title" content="Malhin Learning">
+    <meta name="twitter:title" content="Malhin Learning">
+    <meta itemprop="name" content="Malhin Learning">
+    <meta property="fb:app_id" content="138300032096">
+
+    <link href="Frontend/css/fontspreload.css" rel="preload stylesheet" as="style">
+
+    <link rel="stylesheet" href="style_1.css" as="style">
+    <meta name="apple-itunes-app" content="app-id=665033466" />
+    <meta name="google-play-app" content="app-id=no.degree.ML.app" />
+    <meta name="p:domain_verify" content="0ddce08b74782997db6e5fd7a25661dd" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png" />
+    <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+    <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5" />
+    <link rel="manifest" href="/images/favicons/site.webmanifest" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png" />
+
+
+    <link rel="stylesheet" href="Frontend/css/style_2.css" as="style">
+    <link rel="stylesheet" href="Frontend/css/style_3.css" as="style">
+
+
+
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" type="text/css" href="bundle/css/bluemaster-later_homepage-homepage-later/2fd3b846fbfe248393c1ae798d8a0f" />
+
+    <script>!function (t) { "use strict"; t.loadCSS || (t.loadCSS = function () { }); var e = loadCSS.relpreload = {}; if (e.support = function () { var e; try { e = t.document.createElement("link").relList.supports("preload") } catch (t) { e = !1 } return function () { return e } }(), e.bindMediaToggle = function (t) { var e = t.media || "all"; function a() { t.addEventListener ? t.removeEventListener("load", a) : t.attachEvent && t.detachEvent("onload", a), t.setAttribute("onload", null), t.media = e } t.addEventListener ? t.addEventListener("load", a) : t.attachEvent && t.attachEvent("onload", a), setTimeout(function () { t.rel = "stylesheet", t.media = "only x" }), setTimeout(a, 3e3) }, e.poly = function () { if (!e.support()) for (var a = t.document.getElementsByTagName("link"), n = 0; n < a.length; n++) { var o = a[n]; "preload" !== o.rel || "style" !== o.getAttribute("as") || o.getAttribute("data-loadcss") || (o.setAttribute("data-loadcss", !0), e.bindMediaToggle(o)) } }, !e.support()) { e.poly(); var a = t.setInterval(e.poly, 500); t.addEventListener ? t.addEventListener("load", function () { e.poly(), t.clearInterval(a) }) : t.attachEvent && t.attachEvent("onload", function () { e.poly(), t.clearInterval(a) }) } "undefined" != typeof exports ? exports.loadCSS = loadCSS : t.loadCSS = loadCSS }("undefined" != typeof global ? global : this);</script>
+
+
+    <link rel="canonical" href="https://www.ML.com" />
+    <meta property="og:url" content="https://www.ML.com" />
+    <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"Corporation","name":"ML","url":"https://www.ML.com","logo":"https://www.ML.com/images/logo/logo-256.png",
+            "description":"Send large files using ML via desktop, mobile apps, our website or from your website using our API.","makesOffer":[{"@type":"Offer","name":"ML Free","url":"https://www.ML.com"},{"@type":"Offer","name":"ML Pro","url":"https://www.ML.com/signuppro"}],
+            "sameAs":["https://www.facebook.com/ML/","https://twitter.com/ML","https://www.youtube.com/user/MLcom","https://www.linkedin.com/company/ML.com/"]}</script>
+</head>
+
+<body>
+    <form method="post" action="./" id="ctl00">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="fmNavbar">
+            <div class="container">
+
+
+                <a class="navbar-brand" href="/">
+                    <img id="imgLogo" src="./images/logo/logo-horiz.svg" class="navbar-logo standard-logo d-none d-sm-block" alt="Malhin Learning Logo" width="174" height="40" />
+                    <img id="imgLogoMobile" src="./images/logo/logo.svg" class="navbar-logo standard-logo d-block d-sm-none" alt="Malhin Learning Logo" width="55" height="40" />
+                </a>
+                <div id="navbar-right">
+
+                    <a href="signup" class="btn btn-outline-secondary ml-auto d-lg-none d-inline-block mr-2 goto-plans">
+                        Sign up
+                    </a>
+					<!-- login.html -->
+                    <a href="login" class="btn btn-outline-primary ml-auto d-lg-none d-inline-block mr-2 loginLink">
+                        Log in
+                    </a>
+                </div>
+                <div id="fmNavbarToggle" class="navbar-collapse collapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item d-none d-lg-block">
+                            <a href="signup" class="btn btn-outline-secondary goto-plans">
+                                Sign up
+                            </a>
+                        </li>
+
+                        <li id="loginNav" class="nav-item d-none d-lg-block">
+                        	<!-- login.html -->
+                            <a href="login" class="btn btn-outline-primary loginLink">
+                                Log in
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </nav>
+
+
+
+
+        <!--uploader section-->
+        <h1 id="mainPageHeader" class="desktop-home container text-center mt-4 mt-md-6">Malhin Learning</h1>
+        <h2 class="desktop-home text-center h5 mt-3 container">Main Page</h2>
+        <section class="desktop-home page-section home-uploader-section pt-2 pb-6 pt-lg-4 " style="overflow-x: hidden;">
+            <div class="container">
+                <div class="row mt-3 mt-lg-5">
+                    <div class="col-12 px-0 px-md-3">
+
+
+
+                        <img src="images/homepage/send-large-files.svg" id="gfx-left" class="d-none d-xl-block" alt="Send large files securely" />
+                        <img src="images/homepage/send-big-files.svg" id="gfx-right" class="d-none d-xl-block" alt="Send big files securely" />
+
+
+                        <div id="uploaderWrapper" class="uploader-wrap mx-auto py-3 px-3 py-sm-4 px-sm-5">
+                                                  
+                            <div id="filemailuploader" class="uploader-extended" ng-controller="uploaderController as upCtrl" style="display: none; position: relative;">
+	                            	<div class="container">
+									      <form class="form-signin" method="post" action="/login">
+									        <h2 class="form-signin-heading">Please Login</h2>
+									        <p>
+									          <label for="username" class="sr-only">Username</label>
+									          <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
+									        </p>
+									        <p>
+									          <label for="password" class="sr-only">Password</label>
+									          <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+									        </p>
+									        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+									      </form>
+									</div>
+                            </div>
+                            <div id="uploader-email-tooltip">
+                                <div class="container">
+                                    <form class="form-signin" method="post" action="/login">
+                                        <h2 class="form-signin-heading">Please Login</h2>
+                                        <p>
+                                            <label for="username" class="sr-only">Username</label>
+                                            <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
+                                        </p>
+                                        <p>
+                                            <label for="password" class="sr-only">Password</label>
+                                            <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+                                        </p>
+                                        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- home features grid -->
+
+
+        
+
+
+
+
+        <!--plans section-->
+
+
+
+
+
+
+        <!--apps carousel section-->
+        
+
+        <!--integrated uploader section-->
+        
+
+        <!--signup section-->
+        
+
+
+
+        <style>
+            #fmFooter {
+                font-size: .9rem
+            }
+
+                #fmFooter h2 {
+                    font-size: 1rem
+                }
+
+                #fmFooter li, #fmFooter ul {
+                    list-style: none;
+                    margin: 0;
+                    padding: 0
+                }
+
+                #fmFooter .fake-link, #fmFooter a {
+                    color: #6c757d !important;
+                    line-height: 2rem
+                }
+
+                    #fmFooter .fake-link:hover, #fmFooter a:hover {
+                        color: #343a40 !important
+                    }
+
+                #fmFooter .top-separator {
+                    border-top: 1px solid #e9ecef
+                }
+
+                #fmFooter .copy-separator {
+                    width: 50px;
+                    border-top: 1px solid #e9ecef
+                }
+
+                #fmFooter .text-copyright {
+                    color: #6c757d
+                }
+
+                #fmFooter .container {
+                    padding: 0
+                }
+
+                #fmFooter .social-link {
+                    text-decoration: none;
+                    display: inline-block;
+                    width: 30px;
+                    height: 30px;
+                    background-image: url(/images/products/brands.png)
+                }
+
+                    #fmFooter .social-link.social-facebook {
+                        background-position: 0 0
+                    }
+
+                    #fmFooter .social-link.social-twitter {
+                        background-position: -30px 0
+                    }
+
+                #fmFooter .flag {
+                    margin-right: .35rem;
+                    vertical-align: -.35rem
+                }
+
+            @media (max-width:991.98px) {
+                #fmFooter .container {
+                    padding: 0 1rem
+                }
+
+                #fmFooter h5 {
+                    font-size: 1rem
+                }
+            }
+
+            @media (max-width:767.98px) {
+                #fmFooter h5 {
+                    margin-top: 1rem
+                }
+            }
+        </style>
+
+        <footer class="footer-container my-5 container" id="fmFooter">
+            <div class="row">
+                <div class="col-12 text-mini text-secondarylight">
+                    &copy; Copyright 2021 Malhin Learning All Rights Reserved
+                </div>
+            </div>
+        </footer>
+    </form>
+
+
+    <script>
+    window.Filemail = window.Filemail || {};
+    Filemail.recaptcha = Filemail.recaptcha || {};
+    Filemail.recaptcha.setup=function(e){this.sitekey=e,this.initDone=!1,Filemail.recaptcha.getToken=function(e="submit"){var i=this,t=new $.Deferred;return this.init().then((function(){window.grecaptcha.execute(i.sitekey,{action:e}).then((function(e){t.resolve(e)}))})),t.promise()},Filemail.recaptcha.init=function(){var e=this,i=new $.Deferred;if(e.initDone)i.resolve();else{window.__recaptchaCallback=function(){e.initDone=!0,i.resolve()};var t="https://www.google.com/recaptcha/api.js?render="+e.sitekey+"&onload=__recaptchaCallback";Filemail.loadScript(t,null,{async:!0})}return i.promise()}};
+
+    Filemail.recaptcha.setup('6LfiE5ocAAAAAPIxSggV1OLpAwQcnEJPbS7aqwNp');
+    </script>
+
+
+
+    <script>
+        (function () {
+            Filemail.uploader.desktopHint = {};
+            Filemail.uploader.desktopHint.version = '1099';
+        })();
+    </script>
+
+
+
+
+
+</body>
+</html>

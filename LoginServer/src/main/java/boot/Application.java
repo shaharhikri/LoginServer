@@ -7,8 +7,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @ComponentScan(basePackages = { "boot","dal","data","errors","uploadFiles","user" } )
-//@EntityScan("data")
-//@EnableJpaRepositories("dal")
+@EntityScan("data")
+@EnableJpaRepositories("dal")
 @SpringBootApplication
 public class Application {
 

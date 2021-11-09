@@ -1,16 +1,23 @@
 package user;
 
 
+import java.io.IOException;
+
 import org.springframework.security.core.annotation.CurrentSecurityContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import errors.FileDidntUploadException;
 
 @Controller // changed from RestController
-public class HomeResource {
+public class HomeController {
 
 	// what happen when you connect
 	@RequestMapping(
@@ -33,10 +40,17 @@ public class HomeResource {
 	
 	@GetMapping("/signup")
 	public String signup() {
-		return "signup";
+		return "signup3";
 	}
+	
+//	@PostMapping("/signup")
+//	public String addUser() {
+//		//user pass
+//		return "redirect:/signup";
+//	}
 
 	
+	//**********Not using*********
 	@GetMapping("/user")
 	public String user() {
 		return "user.html";
